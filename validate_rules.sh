@@ -1,4 +1,3 @@
-cat << 'EOF' > validate_rules.sh
 #!/bin/bash
 set -e
 
@@ -32,5 +31,4 @@ done
 echo "=========================================="
 echo "🎉 All rules passed validation successfully!"
 echo "=========================================="
-EOF
-# Cache bust to trigger pipeline
+# Pipeline Trigger v2
