@@ -59,7 +59,6 @@ chmod +x ./validate_rules.sh
 3. Expected Output
 A successful validation workflow cleanly parses the detection logic and yields a definitive success block:
 
-Plaintext
 ==========================================
 🛡️  Running Sigma Detection Validation 🛡️
 ==========================================
