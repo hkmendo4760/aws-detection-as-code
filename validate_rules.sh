@@ -1,3 +1,4 @@
+cat << 'EOF' > validate_rules.sh
 #!/bin/bash
 set -e
 
@@ -23,11 +24,12 @@ for rule in $(find detections/ -name "*.yml" -o -name "*.yaml"); do
         exit 1
     fi
 
-    echo "⚙️  Testing Athena SQL compilation..."
-    sigma convert -t athena -p aws "$rule" > /dev/null
+    echo "⚙️  Testing OpenSearch Lucene compilation..."
+    sigma convert -t opensearch_lucene -p aws "$rule" > /dev/null
     echo "🚀 Compilation: Successful"
 done
 
 echo "=========================================="
 echo "🎉 All rules passed validation successfully!"
 echo "=========================================="
+EOF
