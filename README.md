@@ -1,2 +1,20 @@
-# aws-detection-as-code
-A cloud-native DevSecOps pipeline using GitHub Actions and Codespaces to lint, test, and automatically deploy vendor-agnostic Sigma detection rules to AWS infrastructure.
+Project Overview
+A brief 2–3 sentence executive summary explaining what the project is and why it exists.
+
+Example: "An automated, cloud-native Detection-as-Code (DaC) CI/CD pipeline that validates, tests, and prepares Sigma detection rules for production deployment. This project automates syntax linting and query compilation using the OpenSearch Lucene backend, ensuring zero-day misconfigurations never reach production SIEM environments."
+
+🛠️ Architecture & Flow
+This is where your technical design shines. Break it down into clear stages:
+
+Authoring: Writing rules in standard YAML/Sigma format using VS Code/WSL.
+
+Validation (CI): GitHub Actions triggers on every push or PR to main.
+
+Compilation: pySigma environment spins up, validates syntax, and test-compiles the rule using --without-pipeline flags for the opensearch_lucene target backend.
+
+💻 CI/CD Pipeline Implementation (The "How")
+Briefly highlight the engineering hurdles you overcame to show your depth:
+
+The Challenge: Transitioning compilation logic from non-supported enterprise engines to target OpenSearch-compliant queries while bypassing rigid log-source mapping constraints during development.
+
+The Solution: Implemented a modular validation script (validate_rules.sh) coupled with a streamlined GitHub Actions workflow targeting specific backend compiler flags (--without-pipeline).
