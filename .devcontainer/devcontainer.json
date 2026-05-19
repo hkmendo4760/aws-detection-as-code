@@ -1,0 +1,16 @@
+{
+    "name": "Detection as Code Workspace",
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "features": {
+        "ghcr.io/devcontainers/features/aws-cli:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "redhat.vscode-yaml",
+                "ms-python.python"
+            ]
+        }
+    },
+    "postCreateCommand": "pip3 install sigma-cli"
+}

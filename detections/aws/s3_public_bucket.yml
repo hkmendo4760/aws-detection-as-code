@@ -1,0 +1,24 @@
+title: AWS S3 Bucket Made Public
+id: a8f82851-bc21-4d92-9572-8815f9b422a1
+status: experimental
+description: Detects when an AWS S3 bucket configuration or policy is altered to allow public access.
+author: Hector Alfonso Mendoza
+references:
+    - https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html
+tags:
+    - attack.defense_evasion
+    - attack.exfiltration
+logsource:
+    product: aws
+    service: cloudtrail
+detection:
+    selection:
+        eventSource: s3.amazonaws.com
+        eventName:
+            - PutBucketPolicy
+            - PutBucketAcl
+            - DeletePublicAccessBlock
+    condition: selection
+falsepositives:
+    - Legitimate administrator making a public website bucket hosting adjustment.
+level: high
