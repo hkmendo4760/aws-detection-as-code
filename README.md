@@ -18,3 +18,16 @@ Briefly highlight the engineering hurdles you overcame to show your depth:
 The Challenge: Transitioning compilation logic from non-supported enterprise engines to target OpenSearch-compliant queries while bypassing rigid log-source mapping constraints during development.
 
 The Solution: Implemented a modular validation script (validate_rules.sh) coupled with a streamlined GitHub Actions workflow targeting specific backend compiler flags (--without-pipeline).
+
+## 💻 Getting Started & Local Validation
+
+To demonstrate the reproducibility of this Detection-as-Code pipeline, you can run the validation suite locally within a Linux/WSL environment or a VS Code Dev Container.
+
+### Prerequisites
+
+Ensure you have Python 3.11+ installed, then set up the required Sigma tooling:
+
+```bash
+# Install core Sigma CLI and the OpenSearch backend plugin
+pip3 install sigma-cli
+sigma plugin install opensearch
