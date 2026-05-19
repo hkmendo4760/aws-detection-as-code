@@ -3,35 +3,28 @@ name: Detection as Code (DaC) CI Pipeline
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'detections/**'
   pull_request:
     branches: [ main ]
-    paths:
-      - 'detections/**'
+  workflow_dispatch:
 
 jobs:
   validate-detections:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Check out the code from the repository
     - name: Checkout Code
       uses: actions/checkout@v4
 
-    # Step 2: Set up a clean Python environment
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-python: '3.11'
+        python-version: '3.11'
 
-    # Step 3: Install Core Sigma CLI and the OpenSearch Plugin
     - name: Install Sigma Tooling
       run: |
         pip3 install sigma-cli
         sigma plugin install opensearch
 
-    # Step 4: Run the exact same validation script we built locally
     - name: Run Rule Validation & Compilation Test
       run: |
         chmod +x ./validate_rules.sh
