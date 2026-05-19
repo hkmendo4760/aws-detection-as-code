@@ -24,7 +24,7 @@ for rule in $(find detections/ -name "*.yml" -o -name "*.yaml"); do
     fi
 
     echo "⚙️  Testing OpenSearch Lucene compilation..."
-    sigma convert -t opensearch_lucene "$rule" > /dev/null
+    sigma convert -t opensearch_lucene --without-pipeline "$rule" > /dev/null
     echo "🚀 Compilation: Successful"
 done
 
