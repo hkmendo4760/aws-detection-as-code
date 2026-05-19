@@ -23,7 +23,6 @@ graph LR
 
     style G fill:#238636,stroke:#fff,stroke-width:2px,color:#fff
     style H fill:#da3633,stroke:#fff,stroke-width:2px,color:#fff
-
 ---
 
 ---
