@@ -33,3 +33,4 @@ echo "=========================================="
 echo "🎉 All rules passed validation successfully!"
 echo "=========================================="
 EOF
+# Cache bust to trigger pipeline
