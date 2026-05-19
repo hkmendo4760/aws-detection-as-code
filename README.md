@@ -26,7 +26,9 @@ graph LR
 
 ---
 
-##⚙️ CI/CD Pipeline Implementation (The "How")
+---
+
+## ⚙️ CI/CD Pipeline Implementation (The "How")
 
 ### The Challenge
 Transitioning validation and compilation logic from generic or legacy security engines to highly specific target OpenSearch-compliant queries. During development, default compilers strictly require centralized processing pipelines for log-source mapping, which routinely breaks local validation suites and halts decoupled engineering workflows.
@@ -36,7 +38,7 @@ Designed and implemented a modular validation script (`validate_rules.sh`) coupl
 
 ---
 
-##💻 Getting Started & Local Validation
+## 💻 Getting Started & Local Validation
 
 To demonstrate the high reproducibility of this Detection-as-Code pipeline, you can run the validation suite locally within any Linux/WSL environment or a VS Code Dev Container.
 
