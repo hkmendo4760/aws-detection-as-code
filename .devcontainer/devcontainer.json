@@ -1,16 +1,19 @@
 {
-    "name": "Detection as Code Workspace",
+    "name": "Detection & IaC Workspace",
     "image": "mcr.microsoft.com/devcontainers/python:3.11",
     "features": {
-        "ghcr.io/devcontainers/features/aws-cli:1": {}
+        "ghcr.io/devcontainers/features/aws-cli:1": {},
+        "ghcr.io/devcontainers/features/terraform:1": {}
     },
     "customizations": {
         "vscode": {
             "extensions": [
                 "redhat.vscode-yaml",
-                "ms-python.python"
+                "ms-python.python",
+                "hashicorp.terraform",
+                "amazonwebservices.aws-toolkit-vscode"
             ]
         }
     },
-    "postCreateCommand": "pip3 install sigma-cli"
+    "postCreateCommand": "pip3 install sigma-cli && terraform init"
 }
